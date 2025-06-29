@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      body { margin: 0; }
+      button {
+        position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+        padding: 10px 20px; background: #4CC3D9; color: white; border: none; cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets><a-asset-item id="model" src="Nike.glb"></a-asset-item></a-assets>
+      <a-camera position="0 1.6 0"></a-camera>
+      <a-entity id="shoe" gltf-model="#model" position="0 0 -5" rotation="0 45 0" scale="15 15 15"></a-entity>
+    </a-scene>
+    <button onclick="document.querySelector('#shoe').object3D.rotation.y += Math.PI / 4">Rotate</button>
+  </body>
+</html>
